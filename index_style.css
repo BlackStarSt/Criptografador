@@ -1,0 +1,63 @@
+main h1 {
+	background: skyblue;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+	font-size: 50px;
+	padding: 10px;
+}
+
+h2 {
+	font-style: italic;
+	padding: 10px;
+}
+
+body {
+	text-align: center;
+}
+
+.texto {
+	display: inline-block;
+	margin: 30px 75px;
+	width: 35%;
+	padding: 10px;
+	border: 2px solid black;
+	resize: none;
+}
+
+.texto:hover {
+	border-color: orange
+}
+
+.botao-container {
+	width: 100%;
+	max-width: 120px;
+	margin: 0 auto;
+	text-align: center;
+	display: inline;
+}
+
+.botao {
+	background-color: skyblue;
+	border: none;
+	border-radius: 3px;
+	margin: 10px 20px;
+	padding: 10px 10px;
+}
+
+.botao:hover{
+	cursor: pointer;
+	background: orange;
+	transform: scale(1.1);
+}
+
+footer {
+	position: fixed;
+	bottom: 15px;
+	width: 100%;
+	padding: 12px 0 2px;
+	border-top: 2px solid skyblue;
+	text-align: center;
+	font-style: italic;
+	font-weight: bold;
+}

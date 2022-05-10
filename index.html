@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="index_style.css">
+
+		<title>Criptografador | Alura</title>
+	</head>
+	<body>
+		<header>
+			<main>
+				<h1>Criptografe sua mensagem</h1>
+				<h2>*Apenas letras minúsculas e sem acentos*</h2>
+			<form>
+				<textarea id="texto1" class="texto" cols="20" rows="20" placeholder="Digite aqui o que deseja criptografar..."></textarea>
+				<textarea id="texto2" class="texto" cols="20" rows="20" placeholder="Digite aqui o que deseja descriptografar..."></textarea>
+			</form>
+
+				<div class="botao-container">	
+					<button type="submit" id="botao-crip" class="botao" onclick="botaoCriptografa();">Criptografe</button>
+					<button type="submit" id="botao-crip" class="botao" onclick="botaoDescriptografa();">Descriptografe</button>
+					<button type="submit" id="botao-copiar" class="botao" onclick="botaoCopia();">Copiar</button>
+				</div>
+
+		<script>
+
+		var textoI = document.getElementById('texto1');
+		var textoF = document.getElementById('texto2');
+
+		function botaoCriptografa() {
+			var textoInicial = textoI.value;
+			var textoFinal = document.getElementById('texto2');
+
+			var letras = [['e', 'enter'], ['o', 'ober'], ['i', 'imes'], ['a', 'ai'], ['u', 'ufat']];
+
+			for(var i = 0; i < letras.length; i++) {
+				if (textoInicial.includes(letras[i][0])) {
+					textoInicial = textoInicial.replaceAll(letras[i][0], letras[i][1]);
+					textoFinal.value = textoInicial;
+				}
+			textoI.value = '';
+			}
+		}
+
+		function botaoDescriptografa() {
+			var textoInicial = document.getElementById('texto1');
+			var textoFinal = textoF.value;
+
+			var letras = [["enter", "e"], ["ober", "o"], ["imes", "i"], ["ai", "a"], ["ufat", "u"]];
+		
+		    for (var i = 0; i < letras.length; i++) {
+       			if (textoFinal.includes(letras[i][0])) {
+            		textoFinal = textoFinal.replaceAll(letras[i][0], letras[i][1]);
+            		textoInicial.value = textoFinal;
+            	}
+        	}
+        	textoF.value = '';
+		}
+
+		function botaoCopia() {
+			var textoCopiado = document.getElementById('texto2');
+			textoCopiado.select();
+        	textoCopiado.setSelectionRange(0, 99999);
+			document.execCommand('copy');
+			alert('Texto copiado com sucesso!');
+		}
+
+		</script>
+			
+			</form>
+		</main>
+		
+		<footer>
+
+			&copy;Sthefany Alves | Alura - Oracle/ONE
+		</footer>
+	</body>
+</html>
